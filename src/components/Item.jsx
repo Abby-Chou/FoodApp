@@ -5,6 +5,7 @@ export default function Item({ item }) {
       <div className={styles.itemContainer}>
         <div className={styles.imageContainer}>
           <img
+            className={styles.image}
             src={
               `https://img.spoonacular.com/ingredients_100x100/` + item.image
             }

@@ -38,7 +38,18 @@ export default function FoodDetails({ foodId }) {
         </div>
         <h2>Ingredients</h2>
         <ItemList food={food} />
-        <h2>Instructions</h2>
+        <div className={styles.recipeInstructions}>
+          <h2>Instructions</h2>
+          <ol>
+            {isLoading ? (
+              <p>Loading...</p>
+            ) : (
+              food.analyzedInstructions[0].steps.map((step) => (
+                <li>{step.step}</li>
+              ))
+            )}
+          </ol>
+        </div>
       </div>
     </div>
   );
